@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       component: () => import('../views/Home.vue'),
-      meta: { requiresAuth: true }
+      meta: { guest: true }
     },
     {
       path: '/login',
@@ -23,52 +23,52 @@ const router = createRouter({
     {
       path: '/market',
       component: () => import('../views/Market.vue'),
-      meta: { requiresAuth: true }
+      meta: { guest: true }
     },
     {
       path: '/market/local-stocks',
       component: () => import('../views/LocalStocks.vue'),
-      meta: { requiresAuth: true  }
+      meta: { guest: true }
     },
     {
       path: '/market/foreign-stocks',
       component: () => import('../views/ForeignStocks.vue'),
-      meta: { requiresAuth: true  }
+      meta: { guest: true }
     },
     {
       path: '/wallet',
       component: () => import('../views/Wallet.vue'),
-      meta: {requiresAuth: true }
+      meta: { guest: true }
     },
     {
       path: '/trade',
       component: () => import('../views/Trade.vue'),
-      meta: { requiresAuth: true  }
+      meta: { guest: true }
     },
     {
       path: '/trade/:symbol',
       component: () => import('../views/StockDetail.vue'),
-      meta: {requiresAuth: true  }
+      meta: { guest: true }
     },
     {
       path: '/history',
       component: () => import('../views/History.vue'),
-      meta: {requiresAuth: true  }
+      meta: { guest: true }
     },
     {
       path: '/fixed',
       component: () => import('../views/Fixed.vue'),
-      meta: { requiresAuth: true  }
+      meta: { guest: true }
     },
     {
       path: '/refer',
       component: () => import('../views/Refer.vue'),
-      meta: { requiresAuth: true  }
+      meta: { guest: true }
     },
     {
       path: '/referals',
       component: () => import('../views/Referals.vue'),
-      meta: {requiresAuth: true  }
+      meta: { guest: true }
     },
     // Admin routes
     {
@@ -93,6 +93,11 @@ const router = createRouter({
     },
     {
       path: '/admin/settings',
+      component: () => import('../views/admin/Settings.vue'),
+      meta: { guest: true , requiresAdmin: false }
+    },
+    {
+      path: '/admin/Blog',
       component: () => import('../views/admin/Settings.vue'),
       meta: { guest: true , requiresAdmin: false }
     }
